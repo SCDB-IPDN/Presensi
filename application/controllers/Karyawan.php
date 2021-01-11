@@ -19,9 +19,7 @@ class Karyawan extends CI_Controller
 
     public function create()
     {
-        $this->load->model('Divisi_model', 'divisi');
-        $data['divisi'] = $this->divisi->get_all();
-        return $this->template->load('template', 'karyawan/create', $data);
+        return $this->template->load('template', 'karyawan/create');
     }
 
     public function store()
@@ -31,7 +29,6 @@ class Karyawan extends CI_Controller
             'nik' => $post['nik'],
             'nama' => $post['nama'],
             'telp' => $post['telp'],
-            'divisi' => $post['divisi'],
             'email' => $post['email'],
             'username' => $post['username'],
             'password' => password_hash($post['password'], PASSWORD_DEFAULT),
@@ -70,7 +67,6 @@ class Karyawan extends CI_Controller
             'nik' => $post['nik'],
             'nama' => $post['nama'],
             'telp' => $post['telp'],
-            'divisi' => $post['divisi'],
             'email' => $post['email'],
             'username' => $post['username'],
         ];

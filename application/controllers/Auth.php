@@ -26,7 +26,7 @@ class Auth extends CI_Controller
         $check = $this->user->find_by('username', $username, false);
         if ($check->num_rows() == 1) {
             $user_data = $check->row();
-            $verify_password = password_verify($password, $user_data->password);
+            $verify_password = MD5($password, $user_data->password);
 
             if ($verify_password) {
                 $this->set_session($user_data);
@@ -53,7 +53,7 @@ class Auth extends CI_Controller
            'nama' => $user_data->nama,
            'foto' => $user_data->foto,
            'username' => $user_data->username,
-           'divisi' => $user_data->divisi,
+           'penugasan' => $user_data->penugasan,
            'level' => $user_data->level,
            'is_login' => true
         ]);

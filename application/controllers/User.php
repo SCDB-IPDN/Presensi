@@ -24,7 +24,6 @@ class User extends CI_Controller
             'nik' => $post['nik'],
             'nama' => $post['nama'],
             'telp' => $post['telp'],
-            'divisi' => $post['divisi'],
             'email' => $post['email'],
             'username' => $post['username'],
         ];

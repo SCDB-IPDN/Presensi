@@ -5,7 +5,6 @@ class Karyawan_model extends CI_Model
 {
     public function get_all()
     {
-        $this->db->join('divisi', 'users.divisi = divisi.id_divisi', 'LEFT');
         $this->db->where('level', 'Karyawan');
         $result = $this->db->get('users');
         return $result->result();
@@ -13,7 +12,6 @@ class Karyawan_model extends CI_Model
 
     public function find($id)
     {
-        $this->db->join('divisi', 'users.divisi = divisi.id_divisi', 'LEFT');
         $this->db->where('id_user', $id);
         $result = $this->db->get('users');
         return $result->row();

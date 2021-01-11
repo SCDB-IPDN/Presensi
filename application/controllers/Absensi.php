@@ -67,6 +67,7 @@ class Absensi extends CI_Controller
             'tgl' => date('Y-m-d'),
             'waktu' => date('H:i:s'),
             'keterangan' => $keterangan,
+            'penugasan' => $this->session->userdata('penugasan'),
             'id_user' => $this->session->id_user
         ];
         $result = $this->absensi->insert_data($data);

@@ -39,12 +39,17 @@ $this->load->view('dist/_partials/header');
                     <div class="card">
                         <div class="card-header border-bottom">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-6">
+                                <div class="col-xs-12 col-sm-12">
                                     <table class="table border-0">
                                         <tr>
                                             <th class="border-0 py-0">Nama</th>
                                             <th class="border-0 py-0">:</th>
                                             <th class="border-0 py-0"><?= $karyawan->nama ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th class="border-0 py-0">Unit Kerja</th>
+                                            <th class="border-0 py-0">:</th>
+                                            <th class="border-0 py-0"><?= $this->session->userdata('penugasan'); ?></th>
                                         </tr>
                                     </table>
                                 </div>
