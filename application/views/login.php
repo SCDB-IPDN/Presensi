@@ -1,223 +1,101 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
-    <!-- <title>Animated Login Form</title> -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="<?php echo base_url('assets/login/style.css'); ?>" />
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Lambang_IPDN.png/781px-Lambang_IPDN.png">
+    <title>PRESENSI | LOGIN</title>
   </head>
   <body>
     <div class="container">
-        <div class="card-header bg-transparent border-bottom-0 pb-0 text-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Lambang_IPDN.png/781px-Lambang_IPDN.png" alt="Logo IPDN" width="30%" class="img-fluid mx-auto d-block">
-            <div class="mt-3">
-                <span class="card-info text-center"><b>PRESENSI THL IPDN</b></span>
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="<?= base_url('auth/login') ?>" method="post" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="No. Identitas" name="username" required/>
             </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" name="password" required/>
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+            <p class="social-text">Social Media IPDN</p>
+            <div class="social-media">
+              <a href="https://www.facebook.com/bhineka.nara.eka.bhakti" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/ipdn_stpdn" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://instagram.com/humas.ipdn" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://scdb.ipdn.ac.id" target="_blank" class="social-icon">
+                <i class="fas fa-globe"></i>
+              </a>
+            </div>
+          </form>
+    
+          <form action="#" class="sign-up-form">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Lambang_IPDN.png/781px-Lambang_IPDN.png" width="25%">
+            <h4><p class="text-juancok"> 
+              INSTITUT PEMERINTAHAN DALAM NEGERI (IPDN)
+            </p></h4>
+            <p class="social-text"> </p>
+            <div class="social-media">
+              <a href="https://www.facebook.com/bhineka.nara.eka.bhakti" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/ipdn_stpdn" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://instagram.com/humas.ipdn" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://scdb.ipdn.ac.id" target="_blank" class="social-icon">
+                <i class="fas fa-globe"></i>
+              </a>
+            </div>
+          </form>
         </div>
-        <?php if(@$this->session->error): ?>
-            <div class="alert alert-danger alert-dismissable fade show" role="alert">
-                <button class="close" aria-dismissable="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <p><?= $this->session->error ?></p>
-            </div>
-        <?php endif; ?>
-        <form action="<?= base_url('auth/login') ?>" method="post">
-            <div class="input-field">
-                <input type="text" name="username" id="username" class="form-control" required/>
-                <label>Username</label>
-            </div>
-            <div class="input-field">
-                <input type="password" name="password" id="password" class="pswrd form-control" required>
-                <span class="show">SHOW</span>
-                <label>Password</label>
-            </div>
-            <div class="button">
-                <div class="inner"></div>
+      </div>
 
-                <button>LOGIN</button>
-            </div>
-        </form>
-
-        <script>
-            var input = document.querySelector('.pswrd');
-            var show = document.querySelector('.show');
-            show.addEventListener('click', active);
-            function active(){
-                if(input.type === "password"){
-                input.type = "text";
-                show.style.color = "#1DA1F2";
-                show.textContent = "HIDE";
-                }else{
-                input.type = "password";
-                show.textContent = "SHOW";
-                show.style.color = "#111";
-                }
-            }
-        </script>
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>PRESENSI HARIAN THL</h3>
+            <p>
+              Aplikasi presensi kehadiran pegawai THL 
+              Institut Pemerintahan Dalam Negeri (IPDN)
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              About
+            </button>
+          </div>
+          <img src="<?php echo base_url('assets/login/img/login.png'); ?>" class="image" alt="" />
+          
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>CREATED BY IPDN IT DEVELOPMENT TEAM</h3>
+            <p> 
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+          </div>
+          <img src="<?php echo base_url('assets/login/img/register.svg'); ?>" class="image" alt="" />
+        </div>
+      </div>
     </div>
+
+    <script src="<?php echo base_url('assets/login/app.js'); ?>"></script>
   </body>
 </html>
-
-<style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:600|Noto+Sans|Open+Sans:400,700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-body{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  font-family: sans-serif;
-  justify-content: center;
-  background: url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Minimalist-Crumpled-Paper-Simple-Background-Image.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.container{
-  position: relative;
-  width: 400px;
-  background: white;
-  padding: 60px 40px;
-}
-header{
-  font-size: 40px;
-  margin-bottom: 60px;
-  font-family: 'Montserrat', sans-serif;
-}
-.input-field, form .button{
-  margin: 25px 0;
-  position: relative;
-  height: 50px;
-  width: 100%;
-}
-.input-field input{
-  height: 100%;
-  width: 100%;
-  border: 1px solid silver;
-  padding-left: 15px;
-  outline: none;
-  font-size: 19px;
-  transition: .4s;
-}
-input:focus{
-  border: 1px solid #1DA1F2;
-}
-.input-field label, span.show{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.input-field label{
-  left: 15px;
-  pointer-events: none;
-  color: grey;
-  font-size: 18px;
-  transition: .4s;
-}
-span.show{
-  right: 20px;
-  color: #111;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  visibility: hidden;
-  font-family: 'Open Sans', sans-serif;
-}
-input:valid ~ span.show{
-  visibility: visible;
-}
-input:focus ~ label,
-input:valid ~ label{
-  transform: translateY(-33px);
-  background: white;
-  font-size: 16px;
-  color: #1DA1F2;
-}
-form .button{
-  margin-top: 30px;
-  overflow: hidden;
-  z-index: 111;
-}
-.button .inner{
-  position: absolute;
-  height: 100%;
-  width: 300%;
-  left: -100%;
-  z-index: -1;
-  transition: all .4s;
-  background: -webkit-linear-gradient(right,#00dbde,#fc00ff,#00dbde,#fc00ff);
-}
-.button:hover .inner{
-  left: 0;
-}
-.button button{
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: none;
-  outline: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-}
-.container .auth{
-  margin: 35px 0 20px 0;
-  font-size: 19px;
-  color: grey;
-}
-.links{
-  display: flex;
-  cursor: pointer;
-}
-.facebook, .google{
-  height: 40px;
-  width: 100%;
-  border: 1px solid silver;
-  border-radius: 3px;
-  margin: 0 10px;
-  transition: .4s;
-}
-.facebook:hover{
-  border: 1px solid #4267B2;
-}
-.google:hover{
-  border: 1px solid #dd4b39;
-}
-.facebook i, .facebook span{
-  color: #4267B2;
-}
-.google i, .google span{
-  color: #dd4b39;
-}
-.links i{
-  font-size: 23px;
-  line-height: 40px;
-  margin-left: -90px;
-}
-.links span{
-  position: absolute;
-  font-size: 17px;
-  font-weight: bold;
-  padding-left: 8px;
-  font-family: 'Open Sans', sans-serif;
-}
-.signup{
-  margin-top: 50px;
-  font-family: 'Noto Sans', sans-serif;
-}
-.signup a{
-  color: #3498db;
-  text-decoration: none;
-}
-.signup a:hover{
-  text-decoration: underline;
-}
-</style>

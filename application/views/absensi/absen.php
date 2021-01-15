@@ -14,7 +14,7 @@ $this->load->view('dist/_partials/header');
                                 <i class="far fa-question-circle"></i>
                             </div>
                             <h4>SELAMAT DATANG</h4>
-                            <div class="card-description">PRESENSI HARIAN THL IPDN</div>
+                            <div class="card-description">PRESENSI HARIAN <?= date('H:i') >= '00.00' && date('H:i') <= '08.00' ? 'KEHADIRAN' : (date('H:i') >= '16.00' ? 'KEPULANGAN' : 'KEHADIRAN & KEPULANGAN')  ?> THL IPDN</div>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@ $this->load->view('dist/_partials/header');
                     <tbody>
                         <tr>
                             <?php if(is_weekend()): ?>
-                                <td class="bg-light text-danger" colspan="4">Hari ini libur. Tidak Perlu Presensi</td>
+                                <td class="bg-light text-danger" colspan="4">Hari ini libur. Tidak Perlu Presensi Coy</td>
                             <?php else: ?>
                                 <td><i class="fas fa-<?= ($absen < 2) ? "lightbulb text-warning" : "lightbulb text-success" ?>"></i></td>
                                 <td>

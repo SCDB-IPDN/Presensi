@@ -31,7 +31,7 @@ function check_jam($jam, $status, $raw = false)
                     'text' => $jam
                 ];
             } else {
-                return '<span class="badge badge-danger">' . $jam . '</span>';
+                return '<span class="badge badge-danger">' . $jam . ' &#128543 </span>';
             }
         } elseif ($status == 'Pulang') {
             if($jam < $jam_kerja->start){
@@ -41,7 +41,7 @@ function check_jam($jam, $status, $raw = false)
                         'text' => $jam
                     ];
                 } else {
-                    return '<span class="badge badge-danger">' . $jam . '</span>';
+                    return '<span class="badge badge-danger">' . $jam . ' &#128543 </span>';
                 }
             }
             
@@ -52,7 +52,7 @@ function check_jam($jam, $status, $raw = false)
                         'text' => $jam
                     ];
                 } else {
-                    return '<span class="badge badge-success">' . $jam . '</span>';
+                    return '<span class="badge badge-success">' . $jam . ' &#128525 </span>';
                 }
             }
                
@@ -63,17 +63,17 @@ function check_jam($jam, $status, $raw = false)
                     'text' => $jam
                 ];
             } else {
-                return '<span class="badge badge-success">' . $jam . '</span>';
+                return '<span class="badge badge-success">' . $jam . ' &#128525 </span>';
             }
         }
     } else {
         if ($raw) {
             return [
                 'status' => 'normal',
-                'text' => 'Tidak Hadir'
+                'text' => 'Belum Hadir/Tidak Hadir &#128545'
             ];
         }
-        return 'Tidak Hadir';
+        return 'Belum Hadir/Tidak Hadir &#128545';
     }
 }
 

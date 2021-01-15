@@ -23,14 +23,14 @@ class Absensi extends CI_Controller
         }
 
         $data = array(
-			'title' => "Presensi Dashboard"
+			'title' => "PRESENSI"
 		);
         $this->load->view('absensi/absen', $data);
     }
 
     public function list_karyawan()
     {
-        $data['title'] = "List THL";
+        $data['title'] = "LIST THL";
         $data['karyawan'] = $this->karyawan->get_all();
         return $this->load->view('absensi/list_karyawan', $data);
     }
@@ -47,7 +47,7 @@ class Absensi extends CI_Controller
             redirect('dashboard');
         }else{
             $now = date('H:i:s');
-            $data['title'] = "Absen THL";
+            $data['title'] = "PRESENSI THL";
             $data['absen'] = $this->absensi->absen_harian_user($this->session->id_user)->num_rows();
             return $this->load->view('absensi/absen', $data);
         }
@@ -74,12 +74,12 @@ class Absensi extends CI_Controller
         if ($result) {
             $this->session->set_flashdata('response', [
                 'status' => 'success',
-                'message' => 'Absensi berhasil dicatat'
+                'message' => 'Presensi berhasil dicatat'
             ]);
         } else {
             $this->session->set_flashdata('response', [
                 'status' => 'error',
-                'message' => 'Absensi gagal dicatat'
+                'message' => 'Presensi gagal dicatat'
             ]);
         }
         redirect('absensi/detail_absensi');
@@ -91,7 +91,7 @@ class Absensi extends CI_Controller
         $bulan = @$this->input->get('bulan') ? $this->input->get('bulan') : date('m');
         $tahun = @$this->input->get('tahun') ? $this->input->get('tahun') : date('Y');
         
-        $data['title'] = "Detail THL";
+        $data['title'] = "DETAIL THL";
         $data['karyawan'] = $this->karyawan->find($id_user);
         $data['absen'] = $this->absensi->get_absen($id_user, $bulan, $tahun);
         $data['jam_kerja'] = (array) $this->jam->get_all();
