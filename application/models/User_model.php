@@ -5,8 +5,11 @@ class User_Model extends CI_Model
 {
     public function find_by($field, $value, $return = FALSE)
     {
-        $this->db->where($field, $value);
+        $this->db
+            ->where('username', $value);
+
         $data = $this->db->get('users');
+        
         if ($return) {
             return $data->row();
         }

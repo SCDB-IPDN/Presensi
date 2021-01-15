@@ -25,10 +25,14 @@
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="Password" name="password" required/>
             </div>
+            
+            <?php if(@$this->session->error): ?>
+              <p class="text-juancok"><?= $this->session->error ?></p>
+            <?php endif; ?>
             <input type="submit" value="Login" class="btn solid" />
-            <p class="social-text">Social Media IPDN</p>
+            <p class="text-juancok">Social Media IPDN</p>
             <div class="social-media">
-              <a href="https://www.facebook.com/bhineka.nara.eka.bhakti" target="_blank" class="social-icon">
+              <a href="https://www.facebook.com/bhineka.nara.eka.bhakti" target="_blank" class="social-icon ">
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a href="https://twitter.com/ipdn_stpdn" target="_blank" class="social-icon">

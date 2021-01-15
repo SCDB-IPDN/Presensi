@@ -21,14 +21,12 @@ class Auth extends CI_Controller
     {
         $this->load->model('User_Model', 'user');
         $username = $this->input->post('username');
-        $password = $this->input->post('password');
+        $password = MD5($this->input->post('password'));
 
         $check = $this->user->find_by('username', $username, false);
         if ($check->num_rows() == 1) {
             $user_data = $check->row();
-            $verify_password = MD5($password, $user_data->password);
-
-            if ($verify_password) {
+            if($password == $user_data->password){
                 $this->set_session($user_data);
                 if(is_level('Manager')){
                     redirect('dashboard');
