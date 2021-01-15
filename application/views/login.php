@@ -70,10 +70,8 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>PRESENSI HARIAN THL</h3>
-            <p>
-              Aplikasi presensi kehadiran pegawai THL 
-              Institut Pemerintahan Dalam Negeri (IPDN)
+            <h3><div 0px="" 12px="" arial="" color:="" ff0000="" font:="" id="textDestination" margin:="" style="background-color: none;"></div></h3> 
+            <p><div 0px="" 12px="" arial="" color:="" ff0000="" font:="" id="textDestination2" margin:="" style="background-color: none;"></div>
             </p>
             <button class="btn transparent" id="sign-up-btn">
               About
@@ -99,3 +97,76 @@
     <script src="<?php echo base_url('assets/login/app.js'); ?>"></script>
   </body>
 </html>
+
+<script language="JavaScript">
+
+var text="PRESENSI HARIAN THL";
+var text2="Aplikasi presensi kehadiran pegawai THL Institut Pemerintahan Dalam Negeri (IPDN)";
+var delay=20;
+var delay2=20;
+var currentChar=1;
+var currentChar2=1;
+var destination="[none]";
+var destination2="[none]";
+
+function type()
+{
+  {
+    var dest=document.getElementById(destination);
+    
+    if (dest)// && dest.innerHTML)
+    {
+      dest.innerHTML=text.substr(0, currentChar)+"<blink></blink>";
+      currentChar++;
+      if (currentChar>text.length){
+        currentChar=1;
+        setTimeout("type()", 5000);
+      }else{
+        setTimeout("type()", delay);
+      }
+    }
+  }
+}
+
+function type2()
+{
+  {
+    var dest2=document.getElementById(destination2);
+    
+    if (dest2)// && dest.innerHTML)
+    {
+      dest2.innerHTML=text2.substr(0, currentChar2)+"<blink></blink>";
+      currentChar2++;
+      if (!currentChar2>text2.length){
+        currentChar2=1;
+        setTimeout("type2()", 5000);
+      }else{
+        setTimeout("type2()", delay2);
+      }
+
+      if(!currentChar2>text2.length){
+      }
+    }
+  }
+}
+
+function startTyping(textParam, delayParam, destinationParam){
+  text=textParam;
+  delay=delayParam;
+  currentChar=1;
+  destination=destinationParam;
+  type();
+}
+
+function startTyping2(textParam2, delayParam2, destinationParam2){
+  text2=textParam2;
+  delay2=delayParam2;
+  currentChar2=1;
+  destination2=destinationParam2;
+  type2();
+}
+
+javascript:startTyping(text, 200, "textDestination");
+javascript:startTyping2(text2, 50, "textDestination2");
+
+</script> 
