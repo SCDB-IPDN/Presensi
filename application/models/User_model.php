@@ -16,6 +16,12 @@ class User_Model extends CI_Model
         return $data;
     }
 
+    public function tambah_useragent($table, $data, $username){
+        $this->db->where('username', $username);
+        $this->db->update($table,$data);
+
+    }
+
     public function update_data($id, $data)
     {
         $this->db->where('id_user', $id);
