@@ -14,6 +14,19 @@ class Absensi_model extends CI_Model
         return $result->result_array();
     }
 
+    public function presensi_pribadi($id_user){
+        $tanggal=date('Y-m-d');
+
+        return $this->db->query("SELECT 
+		masuk,
+		case when masuk=keluar then NULL else keluar end as keluar
+		FROM(
+		SELECT DISTINCT
+		min(ab.waktu) as MASUK,
+		max(ab.waktu) as KELUAR
+		FROM absensi ab WHERE id_user = '$id_user' and tgl = '$tanggal') a")->result();
+    }
+
     public function absen_harian_user($id_user)
     {
         $today = date('Y-m-d');

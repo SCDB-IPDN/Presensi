@@ -46,7 +46,8 @@ class Absensi extends CI_Controller
         if(is_level('Manager')){
             redirect('dashboard');
         }else{
-            $now = date('H:i:s');
+            $data['now'] = date('Y-m-d');
+            $data['pribadi'] = $this->absensi->presensi_pribadi($this->session->id_user);
             $data['title'] = "PRESENSI THL";
             $data['absen'] = $this->absensi->absen_harian_user($this->session->id_user)->num_rows();
             return $this->load->view('absensi/absen', $data);
@@ -82,7 +83,7 @@ class Absensi extends CI_Controller
                 'message' => 'Presensi gagal dicatat'
             ]);
         }
-        redirect('absensi/detail_absensi');
+        redirect('absensi/check_absen');
     }
 
     private function detail_data_absen()

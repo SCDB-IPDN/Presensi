@@ -13,20 +13,22 @@
   <body>
     <div class="text">
         <div>PERINGATAN !!!</div>
-        <h3><b><?php echo $title ?></b></h3>
+        <h3><div 0px="" 12px="" arial="" color:="" ff0000="" font:="" id="textDestination" margin:="" style="background-color: none;"></div></h3> 
+        <!-- <h3><b>/b></h3> -->
     </div>
     <div class="astronaut">
         <img src="https://images.vexels.com/media/users/3/152639/isolated/preview/506b575739e90613428cdb399175e2c8-space-astronaut-cartoon-by-vexels.png" alt="" class="src">
     </div>
   </body>
 </html>
+
 <style>
 body{
   margin:0;
   padding:0;
   font-family: 'Tomorrow', sans-serif;
   height:100vh;
-background-image: linear-gradient(to top, #2e1753, #1f1746, #131537, #0d1028, #050819);
+  background-image: linear-gradient(to top, #2e1753, #1f1746, #131537, #0d1028, #050819);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -94,6 +96,7 @@ h1{
   }
 }
 </style>
+
 <script language="JavaScript">
 
 document.addEventListener("DOMContentLoaded",function(){
@@ -101,21 +104,56 @@ document.addEventListener("DOMContentLoaded",function(){
   var body=document.body;
    setInterval(createStar,100);
    function createStar(){
-     var right=Math.random()*500;
-     var top=Math.random()*screen.height;
-     var star=document.createElement("div");
-  star.classList.add("star")
-   body.appendChild(star);
-   setInterval(runStar,10);
-     star.style.top=top+"px";
-   function runStar(){
-     if(right>=screen.width){
-       star.remove();
-     }
-     right+=3;
-     star.style.right=right+"px";
-   }
-   } 
- })
+    var right=Math.random()*500;
+    var top=Math.random()*screen.height;
+    var star=document.createElement("div");
+    star.classList.add("star")
+    body.appendChild(star);
+    setInterval(runStar,10);
+    star.style.top=top+"px";
+    
+    function runStar(){
+      if(right>=screen.width){
+        star.remove();
+      }
+      right+=3;
+      star.style.right=right+"px";
+    }
+  }  
+})
+
+var text= "<?php echo $title ?>";
+var delay=20;
+var currentChar=1;
+var destination="[none]";
+
+function type()
+{
+  {
+    var dest=document.getElementById(destination);
+    
+    if (dest)// && dest.innerHTML)
+    {
+      dest.innerHTML=text.substr(0, currentChar)+"<blink></blink>";
+      currentChar++;
+      if (currentChar>text.length){
+        currentChar=1;
+        setTimeout("type()", 5000);
+      }else{
+        setTimeout("type()", delay);
+      }
+    }
+  }
+}
+
+function startTyping(textParam, delayParam, destinationParam){
+  text=textParam;
+  delay=delayParam;
+  currentChar=1;
+  destination=destinationParam;
+  type();
+}
+
+javascript:startTyping(text, 150, "textDestination");
 
 </script> 

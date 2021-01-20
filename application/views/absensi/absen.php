@@ -47,6 +47,21 @@ $this->load->view('dist/_partials/header');
                 </table>
             </div>
 
+            <div class="container">         
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Anda Masuk</th>
+                        <th>Anda Keluar</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><?php echo $pribadi[0]->masuk ?></td>
+                            <td><?php echo $pribadi[0]->keluar ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <div class="section-body">
             </div>
         </section>
