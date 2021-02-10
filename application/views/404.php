@@ -15,7 +15,7 @@
   <body>
     <div class="text">
         <div>PERINGATAN !!!</div>
-        <h3><div 0px="" 12px="" arial="" color:="" ff0000="" font:="" id="textDestination" margin:="" style="background-color: none;"></div></h3> 
+        <div 0px="" 12px="" arial="" color:="" ff0000="" font:="" id="textDestination" margin:="" style="background-color: none;"></div>
         <!-- <h3><b>/b></h3> -->
     </div>
     <div class="text2">
