@@ -10,8 +10,10 @@ $this->load->view('dist/_partials/header');
             </div>
 
             <div class="container">
-                <!-- <h2>Bordered Table</h2> -->
-                <table id="example" class="table table-striped">
+                <!-- <h2>Bordered Table</h2> -->                
+            </div>
+            <div class="section-body">
+                <table id="table_id" class="display">
                     <thead>
                         <th>No</th>
                         <th>Karyawan</th>
@@ -32,18 +34,21 @@ $this->load->view('dist/_partials/header');
                     </tbody>
                 </table>
             </div>
-
-            <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
-            <script>
-                $(document).ready( function () {
-                    $('#example').DataTable();
-                } );
-            </script>
-
-            <div class="section-body">
-            </div>
         </section>
-      </div>
+    </div>
+
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#table_id').DataTable( {
+            dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
+            buttons: [
+                'excel'
+            ],
+            responsive: true
+        } );
+    } );
+    </script>
     
 
 <?php $this->load->view('dist/_partials/footer'); ?>

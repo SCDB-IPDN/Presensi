@@ -8,6 +8,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Lambang_IPDN.png/781px-Lambang_IPDN.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <title>404</title>
   </head>
   <body>
@@ -15,6 +17,16 @@
         <div>PERINGATAN !!!</div>
         <h3><div 0px="" 12px="" arial="" color:="" ff0000="" font:="" id="textDestination" margin:="" style="background-color: none;"></div></h3> 
         <!-- <h3><b>/b></h3> -->
+    </div>
+    <div class="text2">
+      <div class="row">
+        <div class="col-xl-12">
+          <img src="https://i.pinimg.com/originals/6a/0a/57/6a0a5782fa3dbfd9c12491d034c43c1a.gif" width="40%">
+        </div>
+        <div class="col-xl-12">
+          <a href="http://gg.gg/presensithl" class="btn btn-danger" target="_blank">PENGADUAN</a>
+        </div>
+      </div>
     </div>
     <div class="astronaut">
         <img src="https://images.vexels.com/media/users/3/152639/isolated/preview/506b575739e90613428cdb399175e2c8-space-astronaut-cartoon-by-vexels.png" alt="" class="src">
@@ -37,6 +49,12 @@ body{
 .text{
   position:absolute;
   top:10%;
+  color:#fff;
+  text-align:center;
+}
+.text2{
+  position:absolute;
+  top:22%;
   color:#fff;
   text-align:center;
 }

@@ -11,7 +11,7 @@ $this->load->view('dist/_partials/header');
                     <form action="" method="get">
                         <div class="row">
                             <div class="col">
-                                <select name="bulan" id="bulan" class="form-control">
+                                <select name="bulan" id="bulan" class="form-control-lg">
                                     <option value="" disabled selected>-- Pilih Bulan --</option>
                                     <?php foreach($all_bulan as $bn => $bt): ?>
                                         <option value="<?= $bn ?>" <?= ($bn == $bulan) ? 'selected' : '' ?>><?= $bt ?></option>
@@ -19,7 +19,7 @@ $this->load->view('dist/_partials/header');
                                 </select>
                             </div>
                             <div class="col ">
-                                <select name="tahun" id="tahun" class="form-control">
+                                <select name="tahun" id="tahun" class="form-control-lg">
                                     <option value="" disabled selected>-- Pilih Tahun</option>
                                     <?php for($i = date('Y'); $i >= (date('Y') - 5); $i--): ?>
                                         <option value="<?= $i ?>" <?= ($i == $tahun) ? 'selected' : '' ?>><?= $i ?></option>
@@ -97,4 +97,15 @@ $this->load->view('dist/_partials/header');
             </div>
         </section>
     </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#example').DataTable( {
+            dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
+            buttons: [
+                'excel'
+            ],
+            responsive: true
+        } );
+    } );
+    </script>
 <?php $this->load->view('dist/_partials/footer'); ?>

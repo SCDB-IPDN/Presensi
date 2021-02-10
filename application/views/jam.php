@@ -8,36 +8,51 @@ $this->load->view('dist/_partials/header');
             <div class="section-header">
                 <h1>Waktu Jam Kerja</h1>
             </div>
-
-            <div class="container">
-                <table class="table table-striped">
-                    <thead>
-                        <th>No.</th>
-                        <th>Keterangan</th>
-                        <th>Jam Mulai</th>
-                        <th>Jam Selesai</th>
-                        <th>Aksi</th>
-                    </thead>
-                    <tbody>
-                        <?php foreach($jam as $i => $j): ?>
-                            <tr id="<?= 'jam-' . $j->id_jam ?>">
-                                <td><?= ($i+1) ?></td>
-                                <td><?= $j->keterangan ?></td>
-                                <td class="jam-start"><?= $j->start ?></td>
-                                <td class="jam-finish"><?= $j->finish ?></td>
-                                <td>
-                                    <a href="#" class="btn btn-primary btn-sm btn-edit-jam" data-toggle="modal" data-target="#edit-jam<?= $j->id_jam ?>" ><i class="fa fa-edit"></i> Edit</a>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-
             <div class="section-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <table id="example" class="table table-striped">
+                                <thead>
+                                    <th>No.</th>
+                                    <th>Keterangan</th>
+                                    <th>Jam Mulai</th>
+                                    <th>Jam Selesai</th>
+                                    <th>Aksi</th>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($jam as $i => $j): ?>
+                                        <tr id="<?= 'jam-' . $j->id_jam ?>">
+                                            <td><?= ($i+1) ?></td>
+                                            <td><?= $j->keterangan ?></td>
+                                            <td class="jam-start"><?= $j->start ?></td>
+                                            <td class="jam-finish"><?= $j->finish ?></td>
+                                            <td>
+                                                <a href="#" class="btn btn-primary btn-sm btn-edit-jam" data-toggle="modal" data-target="#edit-jam<?= $j->id_jam ?>" ><i class="fa fa-edit"></i> Edit</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </section>
     </div>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#example').DataTable( {
+            dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
+            buttons: [
+                'excel'
+            ],
+            responsive: true
+        } );
+    } );
+    </script>
 
     <?php foreach($jam as $i => $j): ?>
     <div class="modal-wrapper">
