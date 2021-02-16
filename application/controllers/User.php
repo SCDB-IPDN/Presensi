@@ -21,10 +21,7 @@ class User extends CI_Controller
     {
         $post = $this->input->post();
         $data = [
-            'nik' => $post['nik'],
             'nama' => $post['nama'],
-            'telp' => $post['telp'],
-            'email' => $post['email'],
             'username' => $post['username'],
         ];
 

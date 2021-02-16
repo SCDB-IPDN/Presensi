@@ -26,10 +26,7 @@ class Karyawan extends CI_Controller
     {
         $post = $this->input->post();
         $data = [
-            'nik' => $post['nik'],
             'nama' => $post['nama'],
-            'telp' => $post['telp'],
-            'email' => $post['email'],
             'username' => $post['username'],
             'password' => password_hash($post['password'], PASSWORD_DEFAULT),
         ];
@@ -64,10 +61,7 @@ class Karyawan extends CI_Controller
     {
         $post = $this->input->post();
         $data = [
-            'nik' => $post['nik'],
             'nama' => $post['nama'],
-            'telp' => $post['telp'],
-            'email' => $post['email'],
             'username' => $post['username'],
         ];
 

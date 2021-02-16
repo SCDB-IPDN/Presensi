@@ -75,7 +75,7 @@ class Auth extends CI_Controller
                     'useragent' => $useragent,
                 );
 
-                $this->user->tambah_useragent('users', $data, $username);
+                $this->user->tambah_useragent('tbl_users_presensi', $data, $username);
 
                 if($password == $user_data->password){
                     $this->set_session($user_data);

@@ -8,7 +8,7 @@ class User_model extends CI_Model
         $this->db
             ->where('username', $value);
 
-        $data = $this->db->get('users');
+        $data = $this->db->get('tbl_users_presensi');
         
         if ($return) {
             return $data->row();
@@ -25,7 +25,7 @@ class User_model extends CI_Model
     public function update_data($id, $data)
     {
         $this->db->where('id_user', $id);
-        $result = $this->db->update('users', $data);
+        $result = $this->db->update('tbl_users_presensi', $data);
         return $result;
     }
 }
