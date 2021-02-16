@@ -49,7 +49,7 @@ $this->load->view('dist/_partials/header');
                                         <tr>
                                             <th class="border-0 py-0">Unit Kerja</th>
                                             <th class="border-0 py-0">:</th>
-                                            <th class="border-0 py-0"><?= $this->session->userdata('penugasan'); ?></th>
+                                            <th class="border-0 py-0"><?= $karyawan->penugasan ?></th>
                                         </tr>
                                     </table>
                                 </div>
